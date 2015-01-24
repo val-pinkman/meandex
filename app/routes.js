@@ -10,7 +10,7 @@ module.exports = function(app) {
     // sample api route
     app.get('/api/pokemon/:id', function(req, res) {
 
-        Pokemon.find(function(err, pokemos) {
+        Pokemon.find(function(err, pokemons) {
 
             if(err)
                 res.send(err);
