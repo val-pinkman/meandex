@@ -14,22 +14,22 @@
     <body ng-app="meanDex">
 
         <!-- Menu Ici -->
-        <lx-tabs>
-            <lx-tab heading="Lorem Ipsum 1">
+        <div id="pkHeader" class="bgc-white-1"></div>
+        <lx-tabs class="tc-red-500" links-tc="red-500" links-bgc="white-1" indicator="red-500" active-tab="1" no-divider="true" z-depth="1">
+            <lx-tab heading="MOVES" class="tc-black-1">
                 <p class="p">Lorem Ipsum Content 1</p>
             </lx-tab>
 
-            <lx-tab heading="Lorem Ipsum 2">
-                <p class="p">Lorem Ipsum Content 2</p>
+            <lx-tab heading="DEX" class="tc-black-1">
+                <!-- View -->
+                <div ng-view></div>
             </lx-tab>
 
-            <lx-tab heading="Lorem Ipsum 3">
+            <lx-tab heading="TYPE" class="tc-black-1">
                 <p class="p">Lorem Ipsum Content 3</p>
             </lx-tab>
         </lx-tabs>
-        
-        <!-- View -->
-        <div ng-view></div>
+
 
 
         <!-- Libs -->
