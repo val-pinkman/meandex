@@ -1,7 +1,7 @@
-node_modules/body-parser
-node_modules/express
-node_modules/method-override
-node_modules/mongoose
+node_modules/body-parser/
+node_modules/express/
+node_modules/method-override/
+node_modules/mongoose/
 public/libs/
 npm-debug.log
 .DS_Store
