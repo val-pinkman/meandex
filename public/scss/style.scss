@@ -1,11 +1,13 @@
+@import 'poke';
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
 //// INDEX HEADER ////
 
 #pkHeader {
+
   height: 65px;
   background: #F44336;
 
@@ -47,7 +49,7 @@
 
 
 //// DEX VIEW ////
- 
+
 .type {
 
   display: inline-block;
@@ -82,7 +84,7 @@
     width: 25px;
     display: inline-block;
     border-radius: 0 150px 150px 0;
-  } 
+  }
 }
 
 .cl {
@@ -112,51 +114,51 @@
   }
 
   &--bug {
-    background: #A9B932; 
+    background: #A9B932;
   }
 
   &--flying {
-    background: #C4B3F1; 
+    background: #C4B3F1;
   }
-  
+
   &--steel {
-    background: #B1B6CC; 
+    background: #B1B6CC;
   }
 
   &--fire {
-    background: #E4823D; 
+    background: #E4823D;
   }
 
   &--fighting {
-    background: #A23330; 
+    background: #A23330;
   }
 
   &--ground {
-    background: #DCC06C; 
+    background: #DCC06C;
   }
 
   &--ghost {
-    background: #8379A2; 
+    background: #8379A2;
   }
 
   &--poison {
-    background: #8C4D8D; 
+    background: #8C4D8D;
   }
 
   &--water {
-    background: #6A8AB9; 
+    background: #6A8AB9;
   }
 
   &--fairy {
-    background: #E6ABBB; 
+    background: #E6ABBB;
   }
 
   &--electric {
-    background: #F3D042; 
+    background: #F3D042;
   }
 
   &--normal {
-    background: #A7A879; 
+    background: #A7A879;
   }
 }
 

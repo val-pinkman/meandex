@@ -1,5 +1,52 @@
-<h1>Pokemon</h1>
+<div class="parallax-container">
+    <div class="parallax">
+        <img ng-src="{{pokeUrl}}" />
+    </div>
+</div>
+<div class="section white container">
+    <div class="row">
+        <h2 class="header">{{poke.name}}</h2>
+    </div>
+    <div class="row">
+        <ul>
+            <li ng-repeat="type in poke.types.slice().reverse()">
+                <p>
+                    {{type.name}}
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="row" ng-show="poke.evolutions.length > 0">
+        <h3>Evolution</h3>
+        <table class="hoverable">
+            <thead>
+                <tr>
+                    <th data-field="evolutionType">
+                        Type
+                    </th>
+                    <th data-field="namePoke">
+                        Name
+                    </th>
+                    <th data-field="extraDetails">
+                        Details
+                    </th>
+                </tr>
+            </thead>
+            <tr ng-repeat="evolution in poke.evolutions">
+                <td>
+                    {{evolution.method}}
+                </td>
+                <td>
+                    {{evolution.to}}
+                </td>
+                <td ng-show="evolution.detail">
+                    {{evolution.detail}}
+                </td>
+                <td ng-hide="evolution.detail">
 
-<p>
-    {{ tagline }}
-</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
