@@ -2,7 +2,31 @@
   display: none; }
 
 #pkHeader {
-  height: 65px; }
+  height: 65px;
+  background: #F44336; }
+  #pkHeader .pkB {
+    float: left;
+    display: inline-block;
+    margin: 15px 0 15px 15px; }
+    #pkHeader .pkB__Bulb {
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      border-radius: 50%;
+      border: 0px solid white; }
+      #pkHeader .pkB__Bulb--green {
+        background: #388E3C; }
+      #pkHeader .pkB__Bulb--yellow {
+        background: #FFA000; }
+      #pkHeader .pkB__Bulb--red {
+        background: #D32F2F; }
+    #pkHeader .pkB__BigBulb {
+      width: 35px;
+      height: 35px;
+      display: inline-block;
+      background: #B0BEC5;
+      border-radius: 50%;
+      border: 0px solid white; }
 
 .type {
   display: inline-block;
