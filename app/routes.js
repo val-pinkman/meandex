@@ -26,6 +26,20 @@ module.exports = function(app) {
         });
     });
 
+    // get a pokemon move by its id
+    app.get('/api/move/:id', function(req, res) {
+        var move = dex.get({cat: 'move', id: req.params.id}, function(err, reponse, move) {
+            res.json(JSON.parse(move));
+        });
+    });
+
+    // get a pokemon abilty by its id
+    app.get('/api/abilty/:id', function(req, res) {
+        var move = dex.get({cat: 'ability', id: req.params.id}, function(err, reponse, ability) {
+            res.json(JSON.parse(ability));
+        });
+    });
+
     // frontend routes =========================================================
     // route to handle all angular requests
     app.get('*', function(req, res) {
