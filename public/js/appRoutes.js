@@ -7,6 +7,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'MainController'
         })
 
+        .when('/dex', {
+            templateUrl: 'views/dex.html',
+            controller: 'MainController'
+        })
+
         .when('/moves', {
             templateUrl: 'views/moves.html',
             controller: 'MainController'

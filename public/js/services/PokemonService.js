@@ -7,7 +7,7 @@ angular.module('PokemonService', []).factory('Pokemon', ['$http', function($http
         getAll: function($scope) {
             return $http.get('/api/pokemons')
                 .success(function(response) {
-                    console.log(response);
+                    //console.log(response);
                 })
                 .error(function(err) {
                     console.log(err);
