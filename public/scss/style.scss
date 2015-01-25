@@ -3,6 +3,10 @@
     display: none; 
 }
 
+body {
+
+}
+
 #pkHeader {
   height: 65px;
 } 
@@ -73,24 +77,33 @@
   &--bug {
     background: khaki; 
   }
+
+  &--fairy {
+    background: khaki; 
+  }
+  
+  &--steel {
+    background: khaki; 
+  }
+
+  &--dark {
+    background: khaki; 
+  }
+
+  &--dragon {
+    background: khaki; 
+  }
+
+  &--ghost {
+    background: khaki; 
+  }
+
+  &--bug {
+    background: khaki; 
+  }
 }
 
 .pkPokemon {
   list-style-type: none;
   padding: 20px 0 20px 0;
-  
-  .list-primary-tile {
-    margin-left: 25px;
-  }
-
-  .list-content-tile {  
-
-    height: 50px;
-
-    strong {
-      display: inline-block;
-      font-weight: bold;
-      margin-left: 75px;
-    }
-  }
 }
