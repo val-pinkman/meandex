@@ -3,30 +3,34 @@
     <head>
         <meta charset="UTF-8">
         <base href="/">
+
         <title>MeanDex</title>
+
         <link rel="stylesheet" href="libs/lumx/dist/css/lumx.css" />
         <link rel="stylesheet" href="css/style.css" />
-    </head>
 
+
+    </head>
     <body ng-app="meanDex">
 
         <!-- Menu Ici -->
-        <div id="pkHeader" class="bgc-white-1"></div>
-        <lx-tabs class="tc-red-500" links-tc="red-500" links-bgc="white-1" indicator="red-500" active-tab="1" no-divider="true" z-depth="1">
-            
-            <lx-tab heading="MOVES" class="tc-black-1">
-                <p class="p">Lorem Ipsum Content 1</p>
+        <div id="pkHeader" class="bgc-red-500"></div>
+        <lx-tabs links-tc="light" links-bgc="red-500" indicator="white-1" no-divider="true" z-depth="1">
+            <lx-tab heading="MOVES">
             </lx-tab>
 
-            <lx-tab heading="DEX" class="tc-black-1">
+            <lx-tab heading="DEX">
                 <!-- View -->
-                <div ng-view></div>
+                <div ng-view>
+                    
+                </div>
             </lx-tab>
 
-            <lx-tab heading="TYPE" class="tc-black-1">
-                <p class="p">Lorem Ipsum Content 3</p>
+            <lx-tab heading="TYPE">
             </lx-tab>
         </lx-tabs>
+
+
 
         <!-- Libs -->
         <script src="libs/jquery/dist/jquery.js"></script>
