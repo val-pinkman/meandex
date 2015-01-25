@@ -1,1 +1,1 @@
-angular.module('meanDex', ['ngRoute', 'lumx', 'appRoutes', 'MainCtrl', 'PokemonCtrl', 'PokemonService']);
+angular.module('meanDex', ['ngRoute', 'appRoutes', 'MainCtrl', 'PokemonCtrl', 'PokemonService']);
