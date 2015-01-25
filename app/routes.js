@@ -22,7 +22,7 @@ module.exports = function(app) {
     // get a pokemon based on its national pokedex ID
     app.get('/api/pokemon/:id', function(req, res) {
         var pokemon = dex.get({cat: 'pokemon', id: req.params.id }, function(err, response, pokemon) {
-            res.json(pokemon);
+            res.json(JSON.parse(pokemon));
         });
     });
 
