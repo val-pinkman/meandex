@@ -1,0 +1,8 @@
+/* _poke.scss */
+.parallax-container {
+    height: 600px;
+}
+@media only screen and (max-width : 992px) {
+    .parallax-container {
+        height: auto; }
+}

@@ -1,6 +1,7 @@
+@import 'poke';
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -9,9 +10,9 @@ body {
 
 #pkHeader {
   height: 65px;
-} 
- 
-.type { 
+}
+
+.type {
 
   display: inline-block;
   position: relative;
@@ -45,7 +46,7 @@ body {
     width: 25px;
     display: inline-block;
     border-radius: 0 150px 150px 0;
-  } 
+  }
 }
 
 .cl {
@@ -75,31 +76,31 @@ body {
   }
 
   &--bug {
-    background: khaki; 
+    background: khaki;
   }
 
   &--fairy {
-    background: khaki; 
+    background: khaki;
   }
-  
+
   &--steel {
-    background: khaki; 
+    background: khaki;
   }
 
   &--dark {
-    background: khaki; 
+    background: khaki;
   }
 
   &--dragon {
-    background: khaki; 
+    background: khaki;
   }
 
   &--ghost {
-    background: khaki; 
+    background: khaki;
   }
 
   &--bug {
-    background: khaki; 
+    background: khaki;
   }
 }
 
