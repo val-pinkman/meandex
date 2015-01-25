@@ -11,9 +11,9 @@ module.exports = function(app) {
     // get all pokemons for index page
     app.get('/api/pokemons', function(req, res) {
 
-        Pokemon.find(function(err, pokemons) {
+        Pokemon.find().sort('id').exec(function(err, pokemons) {
             if(err)
-                res.send(err);
+            res.send(err);
 
             res.json(pokemons);
         });
@@ -23,6 +23,20 @@ module.exports = function(app) {
     app.get('/api/pokemon/:id', function(req, res) {
         var pokemon = dex.get({cat: 'pokemon', id: req.params.id }, function(err, response, pokemon) {
             res.json(JSON.parse(pokemon));
+        });
+    });
+
+    // get a pokemon move by its id
+    app.get('/api/move/:id', function(req, res) {
+        var move = dex.get({cat: 'move', id: req.params.id}, function(err, reponse, move) {
+            res.json(JSON.parse(move));
+        });
+    });
+
+    // get a pokemon abilty by its id
+    app.get('/api/abilty/:id', function(req, res) {
+        var move = dex.get({cat: 'ability', id: req.params.id}, function(err, reponse, ability) {
+            res.json(JSON.parse(ability));
         });
     });
 

@@ -1,11 +1,12 @@
 {
-    "name": "mean-pokedex",
-    "version": "0.1.0",
-    "dependencies": {
-        "font-awesome": "latest",
-        "animate.css": "latest",
-        "lumx": "latest",
-        "angular": "latest",
-        "angular-route": "latest"
-    }
+  "name": "mean-pokedex",
+  "version": "0.1.0",
+  "dependencies": {
+    "font-awesome": "latest",
+    "animate.css": "latest",
+    "lumx": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-ui-router": "~0.2.13"
+  }
 }
