@@ -1,12 +1,12 @@
-<ul class="list">
-  <li ng-repeat="Pokemon in Pokemons" class="pkPokemon list-row list-row--has-primary list-row--has-separator">
-    <div class="list-primary-tile">  
+<ul>
+  <li ng-repeat="Pokemon in Pokemons" class="pkPokemon">
+    <div>  
       <span class="type">
         <span class="type__Circle1--{{Pokemon.types.length}} cl--{{Pokemon.types[(Pokemon.types.length - 1)].name}}"></span>
         <span class="type__Circle2 cl--{{Pokemon.types[0].name}}"></span>
       </span>
     </div>
-    <div class="list-content-tile list-content-tile--one-line">
+    <div>
       <strong>{{Pokemon.name | uppercase}} #{{Pokemon.id}}</strong>
     </div>
   </li>

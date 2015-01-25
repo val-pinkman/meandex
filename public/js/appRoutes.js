@@ -22,10 +22,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'MainController'
         })
 
-        .when('/pokemon', {
+        /*.when('/pokemon/:id', {
             templateUrl: 'views/pokemon.html',
             controller: 'PokemonController'
-        });
+        });*/
 
     $locationProvider.html5Mode(true);
 

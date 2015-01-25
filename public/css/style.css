@@ -43,17 +43,21 @@
   background: grey; }
 .cl--bug {
   background: khaki; }
+.cl--fairy {
+  background: khaki; }
+.cl--steel {
+  background: khaki; }
+.cl--dark {
+  background: khaki; }
+.cl--dragon {
+  background: khaki; }
+.cl--ghost {
+  background: khaki; }
+.cl--bug {
+  background: khaki; }
 
 .pkPokemon {
   list-style-type: none;
   padding: 20px 0 20px 0; }
-  .pkPokemon .list-primary-tile {
-    margin-left: 25px; }
-  .pkPokemon .list-content-tile {
-    height: 50px; }
-    .pkPokemon .list-content-tile strong {
-      display: inline-block;
-      font-weight: bold;
-      margin-left: 75px; }
 
 /*# sourceMappingURL=style.css.map */
