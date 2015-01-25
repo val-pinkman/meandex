@@ -37,31 +37,41 @@
     border-radius: 0 150px 150px 0; }
 
 .cl--grass {
-  background: green; }
-.cl--fire {
-  background: red; }
-.cl--water {
-  background: blue; }
-.cl--poison {
-  background: purple; }
-.cl--flying {
-  background: lavender; }
+  background: #83BE60; }
 .cl--rock {
-  background: grey; }
-.cl--bug {
-  background: khaki; }
-.cl--fairy {
-  background: khaki; }
-.cl--steel {
-  background: khaki; }
-.cl--dark {
-  background: khaki; }
+  background: #B7A13D; }
+.cl--ice {
+  background: #98D1D0; }
 .cl--dragon {
-  background: khaki; }
-.cl--ghost {
-  background: khaki; }
+  background: #4B5C90; }
+.cl--dark {
+  background: #6E594B; }
+.cl--psychic {
+  background: #E47892; }
 .cl--bug {
-  background: khaki; }
+  background: #A9B932; }
+.cl--flying {
+  background: #C4B3F1; }
+.cl--steel {
+  background: #B1B6CC; }
+.cl--fire {
+  background: #E4823D; }
+.cl--fighting {
+  background: #A23330; }
+.cl--ground {
+  background: #DCC06C; }
+.cl--ghost {
+  background: #8379A2; }
+.cl--poison {
+  background: #8C4D8D; }
+.cl--water {
+  background: #6A8AB9; }
+.cl--fairy {
+  background: #E6ABBB; }
+.cl--electric {
+  background: #F3D042; }
+.cl--normal {
+  background: #A7A879; }
 
 .pkPokemon {
   list-style-type: none;

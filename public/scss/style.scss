@@ -4,9 +4,7 @@
     display: none;
 }
 
-body {
-
-}
+//// INDEX HEADER ////
 
 #pkHeader {
   height: 65px;
@@ -52,55 +50,75 @@ body {
 .cl {
 
   &--grass {
-    background: green;
-  }
-
-  &--fire {
-    background: red;
-  }
-
-  &--water {
-    background: blue;
-  }
-
-  &--poison {
-    background: purple;
-  }
-
-  &--flying {
-    background: lavender;
+    background: #83BE60;
   }
 
   &--rock {
-    background: grey;
+    background: #B7A13D;
   }
 
-  &--bug {
-    background: khaki;
-  }
-
-  &--fairy {
-    background: khaki;
-  }
-
-  &--steel {
-    background: khaki;
-  }
-
-  &--dark {
-    background: khaki;
+  &--ice {
+    background: #98D1D0;
   }
 
   &--dragon {
-    background: khaki;
+    background: #4B5C90;
   }
 
-  &--ghost {
-    background: khaki;
+  &--dark {
+    background: #6E594B;
+  }
+
+  &--psychic {
+    background: #E47892;
   }
 
   &--bug {
-    background: khaki;
+    background: #A9B932;
+  }
+
+  &--flying {
+    background: #C4B3F1;
+  }
+
+  &--steel {
+    background: #B1B6CC;
+  }
+
+  &--fire {
+    background: #E4823D;
+  }
+
+  &--fighting {
+    background: #A23330;
+  }
+
+  &--ground {
+    background: #DCC06C;
+  }
+
+  &--ghost {
+    background: #8379A2;
+  }
+
+  &--poison {
+    background: #8C4D8D;
+  }
+
+  &--water {
+    background: #6A8AB9;
+  }
+
+  &--fairy {
+    background: #E6ABBB;
+  }
+
+  &--electric {
+    background: #F3D042;
+  }
+
+  &--normal {
+    background: #A7A879;
   }
 }
 
