@@ -11,9 +11,9 @@ module.exports = function(app) {
     // get all pokemons for index page
     app.get('/api/pokemons', function(req, res) {
 
-        Pokemon.find(function(err, pokemons) {
+        Pokemon.find().sort('id').exec(function(err, pokemons) {
             if(err)
-                res.send(err);
+            res.send(err);
 
             res.json(pokemons);
         });
