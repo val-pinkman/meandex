@@ -15,25 +15,27 @@
     float: left;
     display: inline-block;
     margin: 15px 0 15px 15px; }
+    #pkHeader .pkB > * {
+      vertical-align: top; }
     #pkHeader .pkB__Bulb {
       width: 15px;
       height: 15px;
       display: inline-block;
       border-radius: 50%;
-      border: 0px solid white; }
+      border: 0; }
       #pkHeader .pkB__Bulb--green {
-        background: #388E3C; }
+        background: #8BC34A; }
       #pkHeader .pkB__Bulb--yellow {
-        background: #FFA000; }
+        background: #FFEB3B; }
       #pkHeader .pkB__Bulb--red {
-        background: #D32F2F; }
+        background: #D50000; }
     #pkHeader .pkB__BigBulb {
       width: 35px;
       height: 35px;
       display: inline-block;
-      background: #B0BEC5;
+      background: #CFD8DC;
       border-radius: 50%;
-      border: 0px solid white; }
+      border: 0; }
 
 .type {
   display: inline-block;

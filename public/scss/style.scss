@@ -15,24 +15,28 @@
     float: left;
     display: inline-block;
     margin: 15px 0 15px 15px;
+    
+    & > * {
+      vertical-align: top;
+    }
 
     &__Bulb {
       width: 15px;
       height: 15px;
       display: inline-block;
       border-radius: 50%;
-      border: 0px solid white;
+      border: 0;
 
       &--green {
-        background: #388E3C;
+        background: #8BC34A;
       }
 
       &--yellow {
-        background: #FFA000;
+        background: #FFEB3B;
       }
       
       &--red {
-        background: #D32F2F;
+        background: #D50000;
       }
     }
 
@@ -40,9 +44,9 @@
       width: 35px;
       height: 35px;
       display: inline-block;
-      background: #B0BEC5;
+      background: #CFD8DC;
       border-radius: 50%;
-      border: 0px solid white;
+      border: 0;
     }
   }
 } 
