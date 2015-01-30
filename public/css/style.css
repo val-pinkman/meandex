@@ -37,7 +37,7 @@
       border-radius: 50%;
       border: 0; }
 
-.type {
+.pktype {
   display: inline-block;
   position: relative;
   width: 50px;
@@ -45,22 +45,22 @@
   overflow: hidden;
   border-radius: 100%;
   border: 1px solid #F9F9F9; }
-  .type__Circle1--1 {
+  .pktype__Circle1--1 {
     height: 50px;
     width: 50px;
     display: inline-block; }
-  .type__Circle1--2 {
+  .pktype__Circle1--2 {
     height: 50px;
     width: 25px;
     display: inline-block; }
-  .type__Circle2 {
+  .pktype__Circle2 {
     position: absolute;
     right: 0;
     bottom: 0;
     height: 50px;
     width: 25px;
     display: inline-block;
-    border-radius: 0 150px 150px 0; }
+    border-radius: 0 50% 50% 0; }
 
 .cl--grass {
   background: #83BE60; }
@@ -102,5 +102,31 @@
 .pkPokemon {
   list-style-type: none;
   padding: 20px 0 20px 0; }
+  .pkPokemon.col > * {
+    vertical-align: middle; }
+
+.pkBall {
+  position: relative; }
+  .pkBall:after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: white;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 23px; }
+  .pkBall span {
+    display: block;
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-top: 20px solid #B6B6B6;
+    border-left: 20px solid #B6B6B6;
+    border-bottom: 20px solid #B6B6B6;
+    border-right: 20px solid #B6B6B6;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg); }
 
 /*# sourceMappingURL=style.css.map */
