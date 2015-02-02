@@ -116,16 +116,21 @@
     position: absolute;
     left: 0;
     top: 23px; }
+  .pkBall.caught span {
+    border-top-color: #F44336;
+    border-right-color: #F44336;
+    border-left-color: rgba(0, 0, 0, 0.87059);
+    border-bottom-color: rgba(0, 0, 0, 0.87059); }
   .pkBall span {
     display: block;
     box-sizing: border-box;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border-top: 20px solid #B6B6B6;
-    border-left: 20px solid #B6B6B6;
-    border-bottom: 20px solid #B6B6B6;
-    border-right: 20px solid #B6B6B6;
+    border-top: 20px solid #ebebeb;
+    border-left: 20px solid #ebebeb;
+    border-bottom: 20px solid #ebebeb;
+    border-right: 20px solid #ebebeb;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg); }
 
