@@ -3,30 +3,21 @@
     <div class="card">
       <ul>
         <li ng-repeat="Pokemon in Pokemons" class="pkPokemon row valign-wrapper">
-            <!-- <div class="row valign-wrapper"> -->
-                <div class="col s1"></div>
-                <div class="col s1 valign">
-                    <span class="pktype valign"><!-- /!\ REFACTO :AFTER /!\ -->
-                        <span class="pktype__Circle1--{{Pokemon.types.length}} cl--{{Pokemon.types[(Pokemon.types.length - 1)].name}}"></span>
-                        <span class="pktype__Circle2 cl--{{Pokemon.types[0].name}}"></span>
-                    </span>
-                </div>
-                <div class="col s2 valign">
-                    <p class="flow-text center-align">#{{Pokemon.id}}</p>
-                </div>
-                <div class="col s6 valign">
-                    <p class="flow-text"><a href="/pokemon/{{Pokemon.id}}" alt="{{Pokemon.name | uppercase }}">{{Pokemon.name | uppercase}}</a></p>
-                </div>
-                <div class="col s2 valign pkBall">
-                    <span></span>
-                </div>
-            <!-- </div> -->
-            <!-- <div class="row" ng-hide="$last">
-
-                <div class="col s8 offset-s2">
-                    <div class="divider"></div>
-                </div>
-            </div> -->
+          <div class="col s2 offset-s1 l1 offset-l1 valign">
+            <span class="pktype valign"><!-- /!\ REFACTO :AFTER /!\ -->
+              <span class="pktype__Circle1--{{Pokemon.types.length}} cl--{{Pokemon.types[(Pokemon.types.length - 1)].name}}"></span>
+              <span class="pktype__Circle2 cl--{{Pokemon.types[0].name}}"></span>
+            </span>
+          </div>
+          <div class="col s2 m1 valign">
+            <p class="flow-text center-align">#{{Pokemon.id}}</p>
+          </div>
+          <div class="col s5 m7 valign">
+            <p class="flow-text">{{Pokemon.name | uppercase}}</p>
+          </div>
+          <div class="col s3 m2 valign pkBall">
+            <span></span>
+          </div>
         </li>
       </ul>
     </div>
