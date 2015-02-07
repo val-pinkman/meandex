@@ -12,6 +12,8 @@ angular.module('PokemonCtrl', []).controller('PokemonController', function($scop
             });
         }
 
+        poke.pict = "http://img.pokemondb.net/artwork/" + poke.name.toLowerCase() + ".jpg";
+
         $scope.poke = poke;
 
         $('.parallax').parallax();
