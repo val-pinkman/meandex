@@ -22,6 +22,7 @@ angular.module('PokemonCtrl', []).controller('PokemonController', function($scop
         poke.percHp = poke.hp / 255 * 100;
 
         $scope.poke = poke;
+        $scope.moves = poke.moves;
 
         $('.parallax').parallax();
         $('.tabs').tabs();

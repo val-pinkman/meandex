@@ -137,7 +137,18 @@
             </ul>
         </div>
         <div class="col s12" id="moves">
-            moves
+            <div class="row">
+                <ul>
+                    <li ng-repeat="move in moves | orderBy: 'learn_type':false">
+                        <div class="col s4">
+                            {{move.learn_type}}
+                        </div>
+                        <div class="col s8">
+                            {{move.name}}
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 

@@ -7,9 +7,11 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $lo
     });
 
     $(window).on('resize', function () {
-        $scope.winWidth = $window.outerWidth;
-        $scope.containerClass = $scope.winWidth > 600 ? 'container' : '';
-        $scope.cardClass = $scope.winWidth > 600 ? 'card' : '';
+        $scope.$apply(function() {
+            $scope.winWidth = $window.outerWidth;
+            $scope.containerClass = $scope.winWidth > 600 ? 'container' : '';
+            $scope.cardClass = $scope.winWidth > 600 ? 'card' : '';
+        });
     });
 
 
