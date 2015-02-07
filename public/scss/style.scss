@@ -91,79 +91,9 @@
   }
 }
 
-.cl {
+.bg-cl {
 
-  &--grass {
-    background: #83BE60;
-  }
-
-  &--rock {
-    background: #B7A13D;
-  }
-
-  &--ice {
-    background: #98D1D0;
-  }
-
-  &--dragon {
-    background: #4B5C90;
-  }
-
-  &--dark {
-    background: #6E594B;
-  }
-
-  &--psychic {
-    background: #E47892;
-  }
-
-  &--bug {
-    background: #A9B932;
-  }
-
-  &--flying {
-    background: #C4B3F1;
-  }
-
-  &--steel {
-    background: #B1B6CC;
-  }
-
-  &--fire {
-    background: #E4823D;
-  }
-
-  &--fighting {
-    background: #A23330;
-  }
-
-  &--ground {
-    background: #DCC06C;
-  }
-
-  &--ghost {
-    background: #8379A2;
-  }
-
-  &--poison {
-    background: #8C4D8D;
-  }
-
-  &--water {
-    background: #6A8AB9;
-  }
-
-  &--fairy {
-    background: #E6ABBB;
-  }
-
-  &--electric {
-    background: #F3D042;
-  }
-
-  &--normal {
-    background: #A7A879;
-  }
+  @import 'types--bg';
 }
 
 .pkPokemon {
@@ -174,10 +104,14 @@
       vertical-align: middle ;
     }
 
-  & .col a {
-      color: black;
-      font-weight: 400;
-    }
+  a:hover {
+    color: #F44336;
+  }
+    
+  & .txt-cl {  
+    @import 'types--txt';
+    font-weight: 400;
+  }
 }
 
 .pkBall {

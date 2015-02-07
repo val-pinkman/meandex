@@ -62,41 +62,41 @@
     display: inline-block;
     border-radius: 0 50% 50% 0; }
 
-.cl--grass {
+.bg-cl--grass {
   background: #83BE60; }
-.cl--rock {
+.bg-cl--rock {
   background: #B7A13D; }
-.cl--ice {
+.bg-cl--ice {
   background: #98D1D0; }
-.cl--dragon {
+.bg-cl--dragon {
   background: #4B5C90; }
-.cl--dark {
+.bg-cl--dark {
   background: #6E594B; }
-.cl--psychic {
+.bg-cl--psychic {
   background: #E47892; }
-.cl--bug {
+.bg-cl--bug {
   background: #A9B932; }
-.cl--flying {
+.bg-cl--flying {
   background: #C4B3F1; }
-.cl--steel {
+.bg-cl--steel {
   background: #B1B6CC; }
-.cl--fire {
+.bg-cl--fire {
   background: #E4823D; }
-.cl--fighting {
+.bg-cl--fighting {
   background: #A23330; }
-.cl--ground {
+.bg-cl--ground {
   background: #DCC06C; }
-.cl--ghost {
+.bg-cl--ghost {
   background: #8379A2; }
-.cl--poison {
+.bg-cl--poison {
   background: #8C4D8D; }
-.cl--water {
+.bg-cl--water {
   background: #6A8AB9; }
-.cl--fairy {
+.bg-cl--fairy {
   background: #E6ABBB; }
-.cl--electric {
+.bg-cl--electric {
   background: #F3D042; }
-.cl--normal {
+.bg-cl--normal {
   background: #A7A879; }
 
 .pkPokemon {
@@ -104,9 +104,46 @@
   padding: 20px 0 20px 0; }
   .pkPokemon.col > * {
     vertical-align: middle; }
-  .pkPokemon .col a {
-    color: black;
+  .pkPokemon a:hover {
+    color: #F44336; }
+  .pkPokemon .txt-cl {
     font-weight: 400; }
+    .pkPokemon .txt-cl--grass {
+      color: #83BE60; }
+    .pkPokemon .txt-cl--rock {
+      color: #B7A13D; }
+    .pkPokemon .txt-cl--ice {
+      color: #98D1D0; }
+    .pkPokemon .txt-cl--dragon {
+      color: #4B5C90; }
+    .pkPokemon .txt-cl--dark {
+      color: #6E594B; }
+    .pkPokemon .txt-cl--psychic {
+      color: #E47892; }
+    .pkPokemon .txt-cl--bug {
+      color: #A9B932; }
+    .pkPokemon .txt-cl--flying {
+      color: #C4B3F1; }
+    .pkPokemon .txt-cl--steel {
+      color: #B1B6CC; }
+    .pkPokemon .txt-cl--fire {
+      color: #E4823D; }
+    .pkPokemon .txt-cl--fighting {
+      color: #A23330; }
+    .pkPokemon .txt-cl--ground {
+      color: #DCC06C; }
+    .pkPokemon .txt-cl--ghost {
+      color: #8379A2; }
+    .pkPokemon .txt-cl--poison {
+      color: #8C4D8D; }
+    .pkPokemon .txt-cl--water {
+      color: #6A8AB9; }
+    .pkPokemon .txt-cl--fairy {
+      color: #E6ABBB; }
+    .pkPokemon .txt-cl--electric {
+      color: #F3D042; }
+    .pkPokemon .txt-cl--normal {
+      color: #A7A879; }
 
 .pkBall {
   position: relative; }
