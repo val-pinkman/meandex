@@ -51,5 +51,94 @@
             </tr>
         </table>
     </div>
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s6">
+                    <a class="active" href="#stats">Stats</a>
+                </li>
+                <li class="tab col s6">
+                    <a href="#moves">Moves</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col s12" id="stats">
+            <h3>Stats</h3>
+            <h4>Total : {{poke.total}}</h4>
+            <ul class="row">
+                <li>
+                    <div class="col s4">
+                        ATK : {{poke.attack}}
+                    </div>
+                    <div class="col s8">
+                        <div class="progress red lighten-5">
+                            <div class="determinate red" style="width: {{poke.percAtk}}%"></div>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="col s4">
+                        DEF : {{poke.defense}}
+                    </div>
+                    <div class="col s8">
+                        <div class="progress red lighten-5">
+                            <div class="determinate red" style="width: {{poke.percDef}}%"></div>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="col s4">
+                        SPD : {{poke.speed}}
+                    </div>
+                    <div class="col s8">
+                        <div class="progress red lighten-5">
+                            <div class="determinate red" style="width: {{poke.percSpeed}}%"></div>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+
+                    <div class="col s4">
+                        SPE ATK : {{poke.sp_atk}}
+                    </div>
+                    <div class="col s8">
+                        <div class="progress red lighten-5">
+                            <div class="determinate red" style="width: {{poke.percSpAtk}}%"></div>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+
+                    <div class="col s4">
+                        SPE DEF : {{poke.sp_def}}
+                    </div>
+                    <div class="col s8">
+                        <div class="progress red lighten-5">
+                            <div class="determinate red" style="width: {{poke.percSpDef}}%"></div>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="col s4">
+                        HP : {{poke.hp}}
+                    </div>
+                    <div class="col s8">
+                        <div class="progress red lighten-5">
+                            <div class="determinate red" style="width: {{poke.percHp}}%"></div>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col s12" id="moves">
+            moves
+        </div>
+    </div>
 
 </div>
