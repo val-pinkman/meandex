@@ -1,4 +1,4 @@
-angular.module('PokemonService', []).factory('Pokemon', ['$http', function($http) {
+angular.module('PokemonService', []).factory('Pokemon', ['$http', '$q', function($http, $q) {
 
     function errorCallback(err) {
         console.log(err);
@@ -18,6 +18,61 @@ angular.module('PokemonService', []).factory('Pokemon', ['$http', function($http
                 .error(function(err) {
                     console.log(err);
                 });
+        },
+
+        getSubEvo: function(i, subs) {
+            var deferred = $q.defer();
+            var self = this;
+            var curr = i;
+            var subs = subs || [];
+
+            $http.get('/api/pokemon/' + (curr - 1))
+                .success(function(pokemon) {
+
+                    if(pokemon.evolutions.length != 0) {
+                        pokemon.evolutions.forEach(function(evo) {
+                            var id = parseInt(evo.resource_uri.replace('/api/v1/pokemon/', ''));
+                            if(id == curr) {
+                                subs.push({'id': id-1, 'name': evo.to.toLowerCase() });
+                                self.getSubEvo(curr -1, subs);
+                            }
+                        });
+                        deferred.resolve(subs);
+                    }
+
+                })
+                .error(function(err) {
+                    deferred.reject(err);
+                    console.log(err);
+                });
+
+            return deferred.promise;
+        },
+
+        getOverEvo: function(i, overs) {
+            var deferred = $q.defer();
+            var self = this;
+            var overs = overs || [];
+
+            $http.get('/api/pokemon/' + i)
+                .success(function(poke) {
+
+                    if(poke.evolutions.length != 0) {
+                        poke.evolutions.forEach(function(evo) {
+                            var id = parseInt(evo.resource_uri.replace('/api/v1/pokemon/', ''));
+                            overs.push({'id': id, 'name': evo.to.toLowerCase() });
+                            self.getOverEvo(id, overs);
+                        });
+                        // console.log(overs);
+                        deferred.resolve(overs);
+                    }
+
+                })
+                .error(function(err) {
+                    deferred.reject(err);
+                });
+
+            return deferred.promise;
         },
 
         getMove: function(i) {

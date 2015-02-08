@@ -1,4 +1,4 @@
-angular.module('PokemonCtrl', []).controller('PokemonController', function($scope, $location, $routeParams, Pokemon) {
+angular.module('PokemonCtrl', []).controller('PokemonController', function($scope, $location, $routeParams, Pokemon, $q) {
 
     $scope.pokeId = $routeParams.pokeId;
     $scope.pokeUrl = 'img/pokemons/pokemon' + $scope.pokeId + '.jpg';
@@ -24,9 +24,20 @@ angular.module('PokemonCtrl', []).controller('PokemonController', function($scop
         $scope.poke = poke;
         $scope.moves = poke.moves;
 
-        $('.parallax').parallax();
-        $('.tabs').tabs();
-        console.log(poke);
+        var _subs = Pokemon.getSubEvo($scope.pokeId);
+        _subs.then(function(subs) {
+            $scope.subEvos = subs;
+            console.log($scope.subEvos);
+        });
+
+        var _overs = Pokemon.getOverEvo($scope.pokeId);
+        _overs.then(function(overs) {
+            $scope.overEvos = overs;
+            console.log($scope.overEvos);
+        });
     });
+
+    $('.parallax').parallax();
+    $('.tabs').tabs();
 
 });
