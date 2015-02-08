@@ -24,11 +24,14 @@ angular.module('PokemonCtrl', []).controller('PokemonController', function($scop
         $scope.poke = poke;
         $scope.moves = poke.moves;
 
-        var _subs = Pokemon.getSubEvo($scope.pokeId);
-        _subs.then(function(subs) {
-            $scope.subEvos = subs;
-            console.log($scope.subEvos);
-        });
+        if($scope.pokeId > 1) {
+            var _subs = Pokemon.getSubEvo($scope.pokeId);
+            _subs.then(function(subs) {
+                $scope.subEvos = subs;
+                console.log($scope.subEvos);
+            });
+        }
+
 
         var _overs = Pokemon.getOverEvo($scope.pokeId);
         _overs.then(function(overs) {

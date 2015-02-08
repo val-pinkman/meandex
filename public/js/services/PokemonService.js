@@ -33,8 +33,11 @@ angular.module('PokemonService', []).factory('Pokemon', ['$http', '$q', function
                         pokemon.evolutions.forEach(function(evo) {
                             var id = parseInt(evo.resource_uri.replace('/api/v1/pokemon/', ''));
                             if(id == curr) {
-                                subs.push({'id': id-1, 'name': evo.to.toLowerCase() });
-                                self.getSubEvo(curr -1, subs);
+                                subs.push({'id': id-1, 'name': pokemon.name.toLowerCase() });
+                                if(id - 1 != 1) {
+                                    self.getSubEvo(id - 1, subs);
+                                }
+
                             }
                         });
                         deferred.resolve(subs);
