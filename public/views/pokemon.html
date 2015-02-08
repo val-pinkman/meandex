@@ -41,7 +41,7 @@
                     </th>
                 </tr>
             </thead>
-            <tr ng-repeat="evolution in poke.evolutions">
+            <tr ng-repeat="evolution in poke.evolutions | orderBy: poke.evolutions.levels: true">
                 <td>
                     {{evolution.method}}
                 </td>
