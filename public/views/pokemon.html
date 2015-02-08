@@ -57,14 +57,17 @@
             </tr>
         </table>
     </div>
-    <div class="row" ng-hide="{{overEvos.length === 0 && subEvos.length === 0}}">
-        <div class="col s6" ng-repeat="evo in subEvos">
+    <div class="row" ng-show="{{(overEvos.length > 0 || subEvos.length > 0) || (overEvos.length > 0 && subEvos.length > 0)}}">
+        <div class="col s4" ng-repeat="evo in subEvos">
             <p>
                 {{evo.name}}
             </p>
             <img ng-src="http://img.pokemondb.net/artwork/{{evo.name | lowercase}}.jpg" />
         </div>
-        <div class="col s6" ng-repeat="evo in overEvos">
+        <div class="col s4">
+            <img ng-src="{{poke.pict}}" />
+        </div>
+        <div class="col s4" ng-repeat="evo in overEvos">
             <p>
                 {{evo.name}}
             </p>
