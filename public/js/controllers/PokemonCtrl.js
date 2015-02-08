@@ -1,4 +1,4 @@
-angular.module('PokemonCtrl', []).controller('PokemonController', function($scope, $location, $routeParams, Pokemon, $q) {
+angular.module('PokemonCtrl', []).controller('PokemonController', function($scope, $location, $stateParams, Pokemon, $q) {
 
 /*    $scope.pokeId = $routeParams.pokeId;
 */ 

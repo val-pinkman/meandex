@@ -4,30 +4,27 @@ angular.module('appRoutes', ['ui.router']).config(function($stateProvider, $urlR
 
     $stateProvider
         
-        .state('home', {
-            url: '/',
-            templateUrl: 'views/dex.html',
-            controller: 'MainController'
-        })
+    .state('home', {
+        url: '/',
+        templateUrl: 'views/dex.html',
+        controller: 'MainController'
+    })
 
-        .state('dex', {
-            url: '/dex/:id',
-            templateUrl: 'views/pokemon.html',
-            controller: 'PokemonController'
-        })
-        
-        .state('moves', {
-            url: '/moves',
-            templateUrl: 'views/moves.html',
-            controller: 'MainController'
-        })
+    .state('dex', {
+        url: '/dex/:id',
+        templateUrl: 'views/pokemon.html',
+        controller: 'PokemonController'
+    })
+    
+    .state('moves', {
+        url: '/moves',
+        templateUrl: 'views/moves.html',
+        controller: 'MainController'
+    })
 
-        .state('types', {
-            url: '/types',
-            templateUrl: 'views/types.html',
-            controller: 'MainController'
-        });
-
-        //.otherwise('home');
-
+    .state('types', {
+        url: '/types',
+        templateUrl: 'views/types.html',
+        controller: 'MainController'
+    });
 });
