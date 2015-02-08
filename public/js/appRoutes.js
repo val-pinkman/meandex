@@ -1,32 +1,30 @@
-angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+angular.module('appRoutes', ['ui.router']).config(function($stateProvider, $urlRouterProvider) {
+    
+    $urlRouterProvider.otherwise('/');
 
-    $routeProvider
+    $stateProvider
+        
+    .state('home', {
+        url: '/',
+        templateUrl: 'views/dex.html',
+        controller: 'MainController'
+    })
 
-        .when('/', {
-            templateUrl: 'views/dex.html',
-            controller: 'MainController'
-        })
+    .state('dex', {
+        url: '/dex/:id',
+        templateUrl: 'views/pokemon.html',
+        controller: 'PokemonController'
+    })
+    
+    .state('moves', {
+        url: '/moves',
+        templateUrl: 'views/moves.html',
+        controller: 'MainController'
+    })
 
-        .when('/dex', {
-            templateUrl: 'views/dex.html',
-            controller: 'MainController'
-        })
-
-        .when('/moves', {
-            templateUrl: 'views/moves.html',
-            controller: 'MainController'
-        })
-
-        .when('/types', {
-            templateUrl: 'views/types.html',
-            controller: 'MainController'
-        })
-
-        .when('/pokemon/:pokeId', {
-            templateUrl: 'views/pokemon.html',
-            controller: 'PokemonController'
-        });
-
-    $locationProvider.html5Mode(true);
-
-}]);
+    .state('types', {
+        url: '/types',
+        templateUrl: 'views/types.html',
+        controller: 'MainController'
+    });
+});

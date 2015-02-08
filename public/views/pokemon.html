@@ -25,55 +25,6 @@
             </li>
         </ul>
     </div>
-    <div class="row" ng-show="poke.evolutions.length > 0">
-        <h3>Evolution</h3>
-        <table class="hoverable">
-            <thead>
-                <tr>
-                    <th data-field="evolutionType">
-                        Type
-                    </th>
-                    <th data-field="namePoke">
-                        Name
-                    </th>
-                    <th data-field="extraDetails">
-                        Details
-                    </th>
-                </tr>
-            </thead>
-            <tr ng-repeat="evolution in poke.evolutions | orderBy: poke.evolutions.levels: true">
-                <td>
-                    {{evolution.method}}
-                </td>
-                <td>
-                    <a href="/pokemon/{{evolution.id}}" title="{{evolution.to}}">{{evolution.to}}</a>
-                </td>
-                <td ng-show="evolution.detail">
-                    {{evolution.detail}}
-                </td>
-                <td ng-hide="evolution.detail">
-
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="row">
-        <div class="col s4" ng-show="subEvos" ng-repeat="evo in subEvos.slice().reverse()">
-            <p>
-                {{evo.name}}
-            </p>
-            <img ng-src="http://img.pokemondb.net/artwork/{{evo.name | lowercase}}.jpg" />
-        </div>
-        <div class="col s4">
-            <img ng-src="{{poke.pict}}" />
-        </div>
-        <div class="col s4" ng-show="overEvos" ng-repeat="evo in overEvos">
-            <p>
-                {{evo.name}}
-            </p>
-            <img ng-src="http://img.pokemondb.net/artwork/{{evo.name | lowercase}}.jpg" />
-        </div>
-    </div>
     <div class="row">
         <div class="col s12">
             <ul class="tabs">
@@ -174,5 +125,53 @@
             </div>
         </div>
     </div>
+    <div class="row" ng-show="poke.evolutions.length > 0">
+        <h3>Evolution</h3>
+        <table class="hoverable">
+            <thead>
+                <tr>
+                    <th data-field="evolutionType">
+                        Type
+                    </th>
+                    <th data-field="namePoke">
+                        Name
+                    </th>
+                    <th data-field="extraDetails">
+                        Details
+                    </th>
+                </tr>
+            </thead>
+            <tr ng-repeat="evolution in poke.evolutions">
+                <td>
+                    {{evolution.method}}
+                </td>
+                <td>
+                    <a href="/pokemon/{{evolution.id}}" title="{{evolution.to}}">{{evolution.to}}</a>
+                </td>
+                <td ng-show="evolution.detail">
+                    {{evolution.detail}}
+                </td>
+                <td ng-hide="evolution.detail">
 
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col s4" ng-show="subEvos" ng-repeat="evo in subEvos.slice().reverse()">
+            <p>
+                {{evo.name}}
+            </p>
+            <img ng-src="http://img.pokemondb.net/artwork/{{evo.name | lowercase}}.jpg" />
+        </div>
+        <div class="col s4">
+            <img ng-src="{{poke.pict}}" />
+        </div>
+        <div class="col s4" ng-show="overEvos" ng-repeat="evo in overEvos">
+            <p>
+                {{evo.name}}
+            </p>
+            <img ng-src="http://img.pokemondb.net/artwork/{{evo.name | lowercase}}.jpg" />
+        </div>
+    </div>
 </div>

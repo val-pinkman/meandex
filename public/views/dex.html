@@ -13,7 +13,7 @@
             <p class="flow-text center-align">#{{Pokemon.id}}</p>
           </div>
           <div class="col s5 m7 valign">
-            <a ng-href="/pokemon/{{Pokemon.id}}" class="flow-text txt-cl--{{Pokemon.types[(Pokemon.types.length - 1)].name}}">{{Pokemon.name | uppercase}}</a>
+            <a ui-sref="dex({ id: Pokemon.id })" class="flow-text txt-cl--{{Pokemon.types[(Pokemon.types.length - 1)].name}}">{{Pokemon.name | uppercase}}</a>
           </div>
           <div class="col s3 m2 valign pkBall">
             <span></span>

@@ -1,6 +1,8 @@
-angular.module('PokemonCtrl', []).controller('PokemonController', function($scope, $location, $routeParams, Pokemon, $q) {
+angular.module('PokemonCtrl', []).controller('PokemonController', function($scope, $location, $stateParams, Pokemon, $q) {
 
-    $scope.pokeId = $routeParams.pokeId;
+/*    $scope.pokeId = $routeParams.pokeId;
+*/ 
+    $scope.pokeId = $stateParams.id;
     $scope.pokeUrl = 'img/pokemons/pokemon' + $scope.pokeId + '.jpg';
 
     Pokemon.getPokemon($scope.pokeId).success(function(poke) {
