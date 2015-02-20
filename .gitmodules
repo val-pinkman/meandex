@@ -1,6 +1,0 @@
-[submodule "node-pokeapi"]
-	path = node-pokeapi
-	url = git@github.com:val-pinkman/node-pokeapi.git
-[submodule "node_modules/node-pokeapi"]
-	path = node_modules/node-pokeapi
-	url = git@github.com:val-pinkman/node-pokeapi.git
