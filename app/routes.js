@@ -1,6 +1,6 @@
 // grab the pokemon model
 var Pokemon = require('./models/pokemon');
-var dex = require('node-pokeapi')();
+var dex = require('../node-pokeapi')();
 
 module.exports = function(app) {
 
