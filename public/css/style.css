@@ -101,7 +101,8 @@
 
 .pkPokemon {
   list-style-type: none;
-  padding: 20px 0 20px 0; }
+  padding: 20px 0 20px 0;
+  position: relative; }
   .pkPokemon.col > * {
     vertical-align: middle; }
   .pkPokemon a:hover {
@@ -144,6 +145,14 @@
       color: #F3D042; }
     .pkPokemon .txt-cl--normal {
       color: #A7A879; }
+  .pkPokemon:after {
+    width: 80%;
+    height: 1px;
+    position: absolute;
+    bottom: -10px;
+    left: 0%;
+    background: #d6d4d4;
+    display: block; }
 
 .pkBall {
   position: relative; }

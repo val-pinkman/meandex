@@ -99,6 +99,7 @@
 .pkPokemon {
   list-style-type: none;
   padding: 20px 0 20px 0;
+  position: relative;
 
   &.col > * {
       vertical-align: middle ;
@@ -111,6 +112,16 @@
   & .txt-cl {  
     @import 'types--txt';
     font-weight: 400;
+  }
+
+  &:after {
+    width: 80%;
+    height: 1px;
+    position: absolute;
+    bottom: -10px;
+    left: 0%;
+    background: #d6d4d4;
+    display: block;
   }
 }
 
