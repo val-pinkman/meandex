@@ -54,6 +54,10 @@
 
 //// DEX VIEW ////
 
+.pkh1 {
+  color: #ebebeb;
+}
+
 .pktype {
 
   display: inline-block;
@@ -163,5 +167,39 @@
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 
+  }
+}
+
+
+//// POKEMON VIEW ////
+
+.pkStat {
+
+  &__type {
+
+    div {
+      display: inline-block;
+    }
+  }
+
+  &__pic {
+    margin-top: 2em;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.pkMegaImg {
+  height: 80px;
+}
+
+.pkEvol {
+  display: inline-block;
+  margin: 0 2em 0 0;
+
+  p {
+    text-align: center;
   }
 }

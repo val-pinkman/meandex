@@ -1,9 +1,10 @@
 angular.module('PokemonCtrl', []).controller('PokemonController', function($scope, $location, $stateParams, Pokemon, $q) {
-
+    
 /*    $scope.pokeId = $routeParams.pokeId;
 */ 
     $scope.pokeId = $stateParams.id;
     $scope.pokeUrl = 'img/pokemons/pokemon' + $scope.pokeId + '.jpg';
+    $scope.moveFilter = 'level up';
 
     Pokemon.getPokemon($scope.pokeId).success(function(poke) {
         if(poke.evolutions.length > 0) {
@@ -42,7 +43,26 @@ angular.module('PokemonCtrl', []).controller('PokemonController', function($scop
         });
     });
 
+
     $('.parallax').parallax();
     $('.tabs').tabs();
 
+})
+.filter('numberFixedLen', function () { 
+    return function (n, len) { 
+        var num = parseInt(n, 10);
+        len = parseInt(len, 10);
+        
+        if (isNaN(num) || isNaN(len)) { 
+            return n; 
+        }
+
+        num = ''+num;
+
+        while (num.length < len) { 
+            num = '0'+num; 
+        } 
+
+        return num; 
+    };
 });

@@ -1,8 +1,8 @@
 <div ng-class="containerClass">
-    <h1>MeAN.DeX</h1>
+    <h1 class="pkh1">MeAN.DeX</h1>
     <div ng-class="cardClass">
       <ul>
-        <li ng-repeat="Pokemon in Pokemons" class="pkPokemon row valign-wrapper" >
+        <li ng-repeat="Pokemon in Pokemons" ui-sref="dex({ id: Pokemon.id })" class="pkPokemon row valign-wrapper" >
           <div class="col s2 offset-s1 l1 offset-l1 valign">
             <span class="pktype valign"><!-- /!\ REFACTO :AFTER /!\ -->
               <span class="pktype__Circle1--{{Pokemon.types.length}} bg-cl--{{Pokemon.types[(Pokemon.types.length - 1)].name}}"></span>

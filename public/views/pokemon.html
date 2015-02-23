@@ -5,20 +5,25 @@
 </div>
 <div class="section white container">
     <div class="row">
-        <h2 class="header">{{poke.name}}</h2>
-    </div>
-    <div class="row">
-        <div class="col s4">
-            HEIGHT : {{poke.height/10}}m <br />
-            WEIGHT : {{poke.weight/10}}Kg
-        </div>
         <div class="col s8">
+            <h2 class="row header pkStat__name">{{poke.name}}</h2>
+            <div class="row pkStat__height">HEIGHT : {{poke.height/10}}m</div>
+            <div class="row pkStat__weight">WEIGHT : {{poke.weight/10}}Kg</div>
+            <div class="row pkStat__type">
+                <div ng-repeat="type in poke.types.slice().reverse()">
+                    <div ng-if="!($index % 2)">TYPE : </div>
+                    <div ng-if="($index % 2)"> / </div>
+                    <div> {{type.name | uppercase}} </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s4 pkStat__pic">
             <img ng-src="{{poke.pict}}" />
         </div>
     </div>
     <div class="row">
         <ul>
-            <li ng-repeat="type in poke.types.slice().reverse()">
+            <li >
                 <p>
                     {{type.name}}
                 </p>
@@ -37,8 +42,7 @@
             </ul>
         </div>
         <div class="col s12" id="stats">
-            <h3>Stats</h3>
-            <h4>Total : {{poke.total}}</h4>
+            <h4>TOTAL : {{poke.total}}</h4>
             <ul class="row">
                 <li>
                     <div class="col s4">
@@ -113,11 +117,11 @@
         <div class="col s12" id="moves">
             <div class="row">
                 <ul>
-                    <li ng-repeat="move in moves | orderBy: 'learn_type':false">
-                        <div class="col s4">
+                    <li ng-repeat="move in moves | orderBy: 'learn_type':false | filter: { learn_type: moveFilter }">
+                        <div class="col s6">
                             {{move.learn_type}}
                         </div>
-                        <div class="col s8">
+                        <div class="col s6">
                             {{move.name}}
                         </div>
                     </li>
@@ -125,7 +129,7 @@
             </div>
         </div>
     </div>
-    <div class="row" ng-show="poke.evolutions.length > 0">
+    <!-- <div class="row" ng-show="poke.evolutions.length > 0">
         <h3>Evolution</h3>
         <table class="hoverable">
             <thead>
@@ -152,26 +156,26 @@
                     {{evolution.detail}}
                 </td>
                 <td ng-hide="evolution.detail">
-
+    
                 </td>
             </tr>
         </table>
-    </div>
-    <div class="row">
-        <div class="col s4" ng-show="subEvos" ng-repeat="evo in subEvos.slice().reverse()">
-            <p>
-                {{evo.name}}
-            </p>
-            <img ng-src="http://img.pokemondb.net/artwork/{{evo.name | lowercase}}.jpg" />
+    </div> -->
+    <div class="">
+        <div class="pkEvol" ng-show="subEvos" ng-repeat="evo in subEvos.slice().reverse()">
+            <!-- <img ng-src="http://img.pokemondb.net/artwork/{{evo.name | lowercase}}.jpg" /> -->
+            <img ng-src="http://sprites.pokecheck.org/i/{{evo.id | numberFixedLen:3}}.gif" />
+            <p>{{evo.name | uppercase}}</p>
         </div>
-        <div class="col s4">
-            <img ng-src="{{poke.pict}}" />
+        <div class="pkEvol">
+            <!-- <img ng-src="{{poke.pict}}" /> -->
+            <img ng-src="http://sprites.pokecheck.org/i/{{pokeId | numberFixedLen:3}}.gif" />
+            <p>{{poke.name | uppercase}}</p>
         </div>
-        <div class="col s4" ng-show="overEvos" ng-repeat="evo in overEvos">
-            <p>
-                {{evo.name}}
-            </p>
-            <img ng-src="http://img.pokemondb.net/artwork/{{evo.name | lowercase}}.jpg" />
+        <div class="pkEvol" ng-show="overEvos" ng-repeat="evo in overEvos">
+            <img ng-if="(evo.id < 649)" ng-src="http://sprites.pokecheck.org/i/{{evo.id | numberFixedLen:3}}.gif" />
+            <img class="pkMegaImg" ng-if="(evo.id > 649)" ng-src="http://img.pokemondb.net/artwork/{{evo.name | lowercase}}.jpg"/>
+            <p>{{evo.name | uppercase}}</p>
         </div>
     </div>
 </div>

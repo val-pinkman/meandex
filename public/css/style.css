@@ -37,6 +37,9 @@
       border-radius: 50%;
       border: 0; }
 
+.pkh1 {
+  color: #ebebeb; }
+
 .pktype {
   display: inline-block;
   position: relative;
@@ -182,5 +185,21 @@
     border-right: 20px solid #ebebeb;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg); }
+
+.pkStat__type div {
+  display: inline-block; }
+.pkStat__pic {
+  margin-top: 2em; }
+  .pkStat__pic img {
+    width: 100%; }
+
+.pkMegaImg {
+  height: 80px; }
+
+.pkEvol {
+  display: inline-block;
+  margin: 0 2em 0 0; }
+  .pkEvol p {
+    text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
