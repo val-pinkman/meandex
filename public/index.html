@@ -14,10 +14,10 @@
         <!-- Menu Ici -->
         <div class="navbar-fixed">
             <nav id="pkHeader" class="nav-wrapper red">
-                <a ui-sref="home"><span class="pkB pkB__BigBulb"></span></a>
+                <span class="pkB pkB__BigBulb" ui-sref="home"></span>
                 <span class="pkB">
                     <span class="pkB__Bulb pkB__Bulb--green"></span>
-                    <span class="pkB__Bulb pkB__Bulb--yellow"></span>
+                    <span ui-sref="types" class="pkB__Bulb pkB__Bulb--yellow"></span>
                     <span class="pkB__Bulb pkB__Bulb--red"></span>
                 </span>
             </nav>
@@ -38,6 +38,7 @@
         <!-- Custom Angular -->
         <script src="js/controllers/MainCtrl.js"></script>
         <script src="js/controllers/PokemonCtrl.js"></script>
+        <script src="js/controllers/TypesCtrl.js"></script>
         <script src="js/services/PokemonService.js"></script>
         <script src="js/appRoutes.js"></script>
         <script src="js/app.js"></script>

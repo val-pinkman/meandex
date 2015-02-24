@@ -25,6 +25,6 @@ angular.module('appRoutes', ['ui.router']).config(function($stateProvider, $urlR
     .state('types', {
         url: '/types',
         templateUrl: 'views/types.html',
-        controller: 'MainController'
+        controller: 'TypesController'
     });
 });
