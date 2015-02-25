@@ -1,32 +1,16 @@
-<div class="pkTypesList">
-  <section class="cd-section" ng-click="triggerBouncyNav(true)">
+<div class="pkTypes">
+  <h1 class="pkh1">MeAN.TypeS</h1>
+  <!-- <section class="cd-section" ng-click="triggerBouncyNav(true)">
     <a class="cd-bouncy-nav-trigger">Browse categories</a>
-  </section>
+  </section> -->
 
-  <div class="cd-bouncy-nav-modal" ng-click="triggerBouncyNav(false)">
+  <div class="cd-bouncy-nav-modal"><!-- ng-click="triggerBouncyNav(false)" -->
     <nav>
-      <ul class="cd-bouncy-nav">
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
-        <li><a></a></li>
+      <ul class="cd-bouncy-nav pkTypes__list">
+        <li ng-repeat="type in types" ng-mouseover="zDepth=true" ng-mouseleave="zDepth=false"><a class="pkTypes__element pkTypes__element--{{type.name | lowercase}}" ng-class="{'z-depth-4': zDepth, '': !zDepth}"></a></li>
       </ul>
     </nav>
-    
-    <a class="cd-close" ng-click="triggerBouncyNav(false)">Close modal</a>
-  </div>
+
+    <!-- <a class="cd-close" ng-click="triggerBouncyNav(false)">Close modal</a>
+  </div> -->
 </div>
