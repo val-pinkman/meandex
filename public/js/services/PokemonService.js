@@ -84,8 +84,11 @@ angular.module('PokemonService', []).factory('Pokemon', ['$http', '$q', function
 
         getAbility: function(i) {
             return $http.get('/api/ability/' + i).error(errorCallback);
-        }
+        },
 
+        getType: function(i) {
+            return $http.get('http://pokeapi.co/api/v1/type/' + i).error(errorCallback);
+        }
     }
 
 }]);

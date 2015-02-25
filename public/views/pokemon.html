@@ -173,7 +173,7 @@
             <p>{{poke.name | uppercase}}</p>
         </div>
         <div class="pkEvol" ng-show="overEvos" ng-repeat="evo in overEvos">
-            <img ng-if="(evo.id < 649)" ng-src="http://sprites.pokecheck.org/i/{{evo.id | numberFixedLen:3}}.gif" />
+            <img ng-if="(evo.id <= 649)" ng-src="http://sprites.pokecheck.org/i/{{evo.id | numberFixedLen:3}}.gif" />
             <img class="pkMegaImg" ng-if="(evo.id > 649)" ng-src="http://img.pokemondb.net/artwork/{{evo.name | lowercase}}.jpg"/>
             <p>{{evo.name | uppercase}}</p>
         </div>

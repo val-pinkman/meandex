@@ -1,6 +1,14 @@
-angular.module('TypesCtrl', []).controller('TypesController', function($scope, $location, $stateParams, Pokemon, $q) {
+angular.module('TypesCtrl', []).controller('TypesController', function($scope, $location, $stateParams, Pokemon, $q, $document) {
 
-  var is_bouncy_nav_animating = false;
+  var types = {};
+
+  for (i=1; i <= 18; i++) {
+    Pokemon.getType(i).success(function(data) {
+      //console.log(data);
+      types[data.name.toLowerCase()] = data;
+      console.log(types);
+    });
+  };
 
   $scope.triggerBouncyNav = function($bool) {
     //check if no nav animation is ongoing
@@ -21,5 +29,8 @@ angular.module('TypesCtrl', []).controller('TypesController', function($scope, $
       }
     }
   };
+
+  var is_bouncy_nav_animating = false;
+  $scope.triggerBouncyNav(true);
 
 });
