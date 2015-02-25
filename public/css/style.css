@@ -200,10 +200,13 @@
   height: 80px; }
 
 .pkEvol {
-  display: inline-block;
-  margin: 0 2em 0 0; }
-  .pkEvol p {
-    text-align: center; }
+  text-align: center;
+  margin-top: 4em; }
+  .pkEvol__element {
+    display: inline-block;
+    margin: 0 2em 0 0; }
+    .pkEvol__element p {
+      text-align: center; }
 
 .cd-section {
   padding: 2em;
