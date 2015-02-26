@@ -7,7 +7,7 @@
   <div class="cd-bouncy-nav-modal"><!-- ng-click="triggerBouncyNav(false)" -->
     <nav>
       <ul class="cd-bouncy-nav pkTypes__list">
-        <li ng-repeat="type in types" ng-mouseover="zDepth=true" ng-mouseleave="zDepth=false"><a class="pkTypes__element pkTypes__element--{{type.name | lowercase}}" ng-class="{'z-depth-4': zDepth, '': !zDepth}"></a></li>
+        <li ng-repeat="type in types" ng-mouseover="zDepth=true" ng-mouseleave="zDepth=false"><a class="pkTypes__element pkTypes__element--{{type.name | lowercase}} animshadow" ng-class="{'z-depth-4': zDepth, '': !zDepth}"></a></li>
       </ul>
     </nav>
 

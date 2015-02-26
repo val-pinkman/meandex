@@ -453,6 +453,10 @@
     transform: translateY(-100vh); } }
 .pkTypes li:hover {
   background-color: transparent; }
+.pkTypes .animshadow, .pkTypes .animshadow:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
 .pkTypes__element {
   width: 80px;
   height: 80px;

@@ -1,4 +1,5 @@
 @import 'poke';
+@import 'bourbon/bourbon';
 
 ::-webkit-scrollbar {
     display: none;
@@ -227,7 +228,12 @@
     background-color: transparent;
   }
 
+  .animshadow, .animshadow:hover {
+    @include transition(all 0.3s ease-in-out);
+  }
+
   &__element {
+    
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -239,3 +245,4 @@
     }
   }
 }
+
