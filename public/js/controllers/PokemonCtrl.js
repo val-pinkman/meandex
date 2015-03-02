@@ -1,7 +1,7 @@
 angular.module('PokemonCtrl', []).controller('PokemonController', function($scope, $location, $stateParams, Pokemon, $q) {
-    
+
 /*    $scope.pokeId = $routeParams.pokeId;
-*/ 
+*/
     $scope.pokeId = $stateParams.id;
     $scope.pokeUrl = 'img/pokemons/pokemon' + $scope.pokeId + '.jpg';
     $scope.moveFilter = 'level up';
@@ -31,7 +31,7 @@ angular.module('PokemonCtrl', []).controller('PokemonController', function($scop
             var _subs = Pokemon.getSubEvo($scope.pokeId);
             _subs.then(function(subs) {
                 $scope.subEvos = subs;
-                console.log($scope.subEvos);
+                //console.log($scope.subEvos);
             });
         }
 
@@ -39,7 +39,7 @@ angular.module('PokemonCtrl', []).controller('PokemonController', function($scop
         var _overs = Pokemon.getOverEvo($scope.pokeId);
         _overs.then(function(overs) {
             $scope.overEvos = overs;
-            console.log($scope.overEvos);
+            //console.log($scope.overEvos);
         });
     });
 
@@ -48,21 +48,21 @@ angular.module('PokemonCtrl', []).controller('PokemonController', function($scop
     $('.tabs').tabs();
 
 })
-.filter('numberFixedLen', function () { 
-    return function (n, len) { 
+.filter('numberFixedLen', function () {
+    return function (n, len) {
         var num = parseInt(n, 10);
         len = parseInt(len, 10);
-        
-        if (isNaN(num) || isNaN(len)) { 
-            return n; 
+
+        if (isNaN(num) || isNaN(len)) {
+            return n;
         }
 
         num = ''+num;
 
-        while (num.length < len) { 
-            num = '0'+num; 
-        } 
+        while (num.length < len) {
+            num = '0'+num;
+        }
 
-        return num; 
+        return num;
     };
 });
