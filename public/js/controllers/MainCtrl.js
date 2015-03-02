@@ -1,9 +1,11 @@
-angular.module('MainCtrl', []).controller('MainController', function($scope, $location, Pokemon, $document, $window) {
+angular.module('MainCtrl', []).controller('MainController', function($scope, $location, Pokemon, $document, $window, $localStorage) {
 
     $document.ready(function () {
+        $scope.config.limit = 151;
         $scope.winWidth = $window.outerWidth;
         $scope.containerClass = $scope.winWidth > 600 ? 'container' : '';
         $scope.cardClass = $scope.winWidth > 600 ? 'card' : '';
+
     });
 
     $(window).on('resize', function () {
@@ -14,11 +16,20 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $lo
         });
     });
 
+    if($localStorage.pokemons) {
+        $scope.Pokemons = JSON.parse($localStorage.pokemons);
+    } else {
 
-    Pokemon.getAll().success(function(pokemons) {
-        pokemons.forEach(function(pokemon) {
-            pokemon.name = pokemon.name.replace('-', ' ');
+        Pokemon.getAll().success(function(pokemons) {
+            pokemons.forEach(function(pokemon) {
+                pokemon.name = pokemon.name.replace('-', ' ');
+            });
+            $scope.Pokemons = pokemons;
+            $localStorage.pokemons = JSON.stringify(pokemons);
+            console.log('storage setup');
+
         });
-        $scope.Pokemons = pokemons;
-    });
+    }
+
+
 });

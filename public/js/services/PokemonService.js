@@ -88,6 +88,10 @@ angular.module('PokemonService', []).factory('Pokemon', ['$http', '$q', function
 
         getType: function(i) {
             return $http.get('/api/type/' + i).error(errorCallback);
+        },
+
+        getTypes: function() {
+            return $http.get('/api/types').error(errorCallback);
         }
     }
 

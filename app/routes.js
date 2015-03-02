@@ -1,7 +1,7 @@
 // grab the pokemon model
 var Pokemon = require('./models/pokemon');
 var PokeList = require('./models/pokemonlist.js');
-var PokeType = require('./models/pokemonlist.js');
+var PokeType = require('./models/poketype.js');
 var PokeMove = require('./models/pokemove.js');
 
 module.exports = function(app) {
@@ -36,7 +36,7 @@ module.exports = function(app) {
     // get a pokemon move by its id
     app.get('/api/move/:id', function(req, res) {
 
-        PokeMove.findOne({ id: req.params.id}, function(err, move) {
+        PokeMove.findOne({ "id": req.params.id}, function(err, move) {
             if(err)
                 res.send(err);
 
@@ -47,11 +47,21 @@ module.exports = function(app) {
     // get a pokemon move by its id
     app.get('/api/type/:id', function(req, res) {
 
-        PokeType.findOne({ id: req.params.id}, function(err, move) {
+        PokeType.findOne({ "id": req.params.id}, function(err, type) {
             if(err)
                 res.send(err);
 
-            res.json(move);
+            res.json(type);
+        });
+    });
+
+    app.get('/api/types', function(req, res) {
+
+        PokeType.find().sort('id').exec(function(err, types) {
+            if(err)
+                res.send(err);
+
+            res.json(types);
         });
     });
 

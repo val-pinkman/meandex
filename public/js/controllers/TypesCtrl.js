@@ -2,13 +2,16 @@ angular.module('TypesCtrl', []).controller('TypesController', function($scope, $
 
   $scope.types = {};
 
-  for (i=1; i <= 18; i++) {
-    Pokemon.getType(i).success(function(data) {
-      //console.log(data);
-      $scope.types[data.name.toLowerCase()] = data;//[data.name.toLowerCase()]
-      console.log($scope.types);
-    });
-  };
+  // for (i=1; i <= 18; i++) {
+  //   Pokemon.getType(i).success(function(data) {
+  //     //console.log(data);
+  //     $scope.types[data.name.toLowerCase()] = data;//[data.name.toLowerCase()]
+  //     console.log($scope.types);
+  //   });
+  // };
+  Pokemon.getTypes().success(function(types) {
+     $scope.types = types; 
+  });
 
   $scope.triggerBouncyNav = function($bool) {
     //check if no nav animation is ongoing
