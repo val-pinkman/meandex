@@ -1,6 +1,8 @@
 // grab the pokemon model
 var Pokemon = require('./models/pokemon');
-var dex = require('../node-pokeapi')();
+var PokeList = require('./models/pokemonlist.js');
+var PokeType = require('./models/pokemonlist.js');
+var PokeMove = require('./models/pokemove.js');
 
 module.exports = function(app) {
 
@@ -11,9 +13,9 @@ module.exports = function(app) {
     // get all pokemons for index page
     app.get('/api/pokemons', function(req, res) {
 
-        Pokemon.find().sort('id').exec(function(err, pokemons) {
+        PokeList.find().sort('id').exec(function(err, pokemons) {
             if(err)
-            res.send(err);
+                res.send(err);
 
             res.json(pokemons);
         });
@@ -21,23 +23,41 @@ module.exports = function(app) {
 
     // get a pokemon based on its national pokedex ID
     app.get('/api/pokemon/:id', function(req, res) {
-        var pokemon = dex.get({cat: 'pokemon', id: req.params.id }, function(err, response, pokemon) {
-            res.json(JSON.parse(pokemon));
+
+        Pokemon.findOne({ "id": req.params.id}, function(err, pokemon) {
+            if(err)
+                res.send(err);
+
+            console.log(pokemon);
+            res.json(pokemon);
         });
     });
 
     // get a pokemon move by its id
     app.get('/api/move/:id', function(req, res) {
-        var move = dex.get({cat: 'move', id: req.params.id}, function(err, reponse, move) {
-            res.json(JSON.parse(move));
+
+        PokeMove.findOne({ id: req.params.id}, function(err, move) {
+            if(err)
+                res.send(err);
+
+            res.json(move);
+        });
+    });
+
+    // get a pokemon move by its id
+    app.get('/api/type/:id', function(req, res) {
+
+        PokeType.findOne({ id: req.params.id}, function(err, move) {
+            if(err)
+                res.send(err);
+
+            res.json(move);
         });
     });
 
     // get a pokemon abilty by its id
     app.get('/api/abilty/:id', function(req, res) {
-        var move = dex.get({cat: 'ability', id: req.params.id}, function(err, reponse, ability) {
-            res.json(JSON.parse(ability));
-        });
+
     });
 
     // frontend routes =========================================================
