@@ -6,6 +6,9 @@ angular.module('PokemonCtrl', []).controller('PokemonController', function($scop
     $scope.pokeUrl = 'img/pokemons/pokemon' + $scope.pokeId + '.jpg';
     $scope.moveFilter = 'level up';
 
+    $('.parallax').parallax();
+    $('.tabs').tabs();
+
     Pokemon.getPokemon($scope.pokeId).success(function(poke) {
         if(poke.evolutions.length > 0) {
             poke.evolutions.forEach(function(evo) {
@@ -42,10 +45,6 @@ angular.module('PokemonCtrl', []).controller('PokemonController', function($scop
             //console.log($scope.overEvos);
         });
     });
-
-
-    $('.parallax').parallax();
-    $('.tabs').tabs();
 
 })
 .filter('numberFixedLen', function () {

@@ -1,1 +1,1 @@
-angular.module('meanDex', ['ui.router', 'appRoutes', 'MainCtrl', 'PokemonCtrl', 'TypesCtrl', 'PokemonService', 'ngStorage']);
+angular.module('meanDex', ['ui.router', 'appRoutes', 'MainCtrl', 'PokemonCtrl', 'TypesCtrl', 'PokemonService', 'ngStorage', 'infinite-scroll']);

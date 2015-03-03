@@ -8,6 +8,7 @@
     "angular": "latest",
     "angular-route": "latest",
     "angular-ui-router": "~0.2.13",
-    "ngstorage": "~0.3.0"
+    "ngstorage": "~0.3.0",
+    "nginfinitescroll": "~1.2.0"
   }
 }

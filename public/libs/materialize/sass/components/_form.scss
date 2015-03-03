@@ -4,7 +4,7 @@ select:focus {
 }
 button:focus {
   outline: none;
-  background-color: lighten($button-color, 10%);
+  background-color: lighten($button-color, 4%);
 }
 
 label {
@@ -31,7 +31,7 @@ label {
   }
   label.active {
     font-size: $label-font-size;
-    @include transform(translateY(-130%));
+    @include transform(translateY(-140%));
   }
 
   input[type=text]:focus + label,
@@ -153,6 +153,7 @@ textarea.materialize-textarea {
   overflow-y: hidden; /* prevents scroll bar flash */
   padding: 1.6rem 0; /* prevents text jump on Enter keypress */
   resize: none;
+  min-height: 3rem;
 }
 
 // For textarea autoresize
@@ -359,7 +360,9 @@ form p {
 }
 
 
-// Switch
+/***************
+     Switch
+***************/
 .switch,
 .switch * {
     -webkit-user-select: none;
@@ -369,87 +372,101 @@ form p {
 .switch label {
     cursor: pointer;
 }
-.switch label input[type=checkbox]:first-child {
+.switch label input[type=checkbox]{
     opacity: 0;
     width: 0;
     height: 0;
 }
-.switch label input[type=checkbox]:first-child:checked + .lever {
-    background-color: #7bc5be;
+.switch label input[type=checkbox]:checked + .lever {
+    background-color: $switch-checked-lever-bg;
 }
-.switch label input[type=checkbox]:first-child:checked + .lever:after {
-    background-color: #009587;
+.switch label input[type=checkbox]:checked + .lever:after {
+    background-color: $switch-bg-color;
 }
-.switch label .lever,
-.switch label input[type=checkbox][disabled]:first-child + .lever {
+.switch label .lever {
     content: "";
     display: inline-block;
-    width: 45px;
+    position: relative;
+    width: 40px;
     height: 15px;
-    background-color: #818181;
+    background-color: $switch-unchecked-lever-bg;
     border-radius: 15px;
     margin-right: 10px;
     transition: background 0.3s ease;
     vertical-align: middle;
-    margin-left: 5px;
+    margin: 0px 16px;
 }
 .switch label .lever:after {
     content: "";
+    position: absolute;
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: #F1F1F1;
-    border-radius: 20px;
-    position: relative;
+    width: 21px;
+    height: 21px;
+    background-color: $switch-unchecked-bg;
+    border-radius: 21px;
     box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4);
     left: -5px;
-    top: -2px;
+    top: -3px;
     transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
 }
-.switch label input[type=checkbox][disabled]:first-child + .lever:after,
-.switch label input[type=checkbox][disabled]:checked:first-child + .lever:after {
-    background-color: #BDBDBD;
+// Switch active style
+input[type=checkbox]:checked:not(:disabled) ~ .lever:active:after {
+       box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4), 0 0 0 15px transparentize($switch-bg-color, .9);
 }
-input[type=checkbox]:first-child:checked ~ .lever:active:after {
-       box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4), 0 0 0 15px rgba(0, 149, 135, 0.1);
+input[type=checkbox]:not(:disabled) ~ .lever:active:after {
+       box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4), 0 0 0 15px rgba(0, 0, 0, 0.08);
 }
-input[type=checkbox]:first-child ~ .lever:active:after,
-input[type=checkbox][disabled]:first-child ~ .lever:active:after {
-       box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4), 0 0 0 15px rgba(0, 0, 0, 0.1);
+.switch label input[type=checkbox]:checked + .lever:after {
+    left: 24px;
 }
-.switch label input[type=checkbox]:first-child:checked + .lever:after {
-    left: 30px;
+
+// Disabled Styles
+
+.switch input[type=checkbox][disabled] + .lever{
+  cursor: default;
 }
+.switch label input[type=checkbox][disabled] + .lever:after,
+.switch label input[type=checkbox][disabled]:checked + .lever:after {
+    background-color: $input-disabled-solid-color;
+}
+
+
 
 
 /***************
   Select Field
 ***************/
 
-.select-wrapper span.select-dropdown {
-  position: relative;
-  cursor: pointer;
-  color: #444;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid $input-border-color;
-  outline: none;
-  height: 3rem;
-  line-height: 3rem;
-  width: 100%;
-  font-size: 1rem;
-  margin: 0 0 15px 0;
-  padding: 0;
-  display: block;
-  position: relative;
+.select-label {
+  position: absolute;
+}
 
-  &:after {
-    position: absolute;
-    right: 0;
-    font-size: 23px;
-    @extend [class^="mdi-"];
-    @extend .mdi-navigation-arrow-drop-down:before;
+.select-wrapper {
+  position: relative;
+  margin-top: 15px;
+
+  input.select-dropdown {
+    position: relative;
+    cursor: pointer;
+    color: #444;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $input-border-color;
+    outline: none;
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0 0 15px 0;
+    padding: 0;
+    display: block;
   }
+  .mdi-navigation-arrow-drop-down {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 23px;
+    }
 }
 
 select { display: none; }
@@ -460,7 +477,11 @@ select.browser-default { display: block; }
 select:disabled {
   color: rgba(0,0,0,.3);
 }
-.select-wrapper span.select-dropdown.disabled {
+.select-wrapper input.select-dropdown:disabled {
+  color: rgba(0,0,0,.3);
+  border-bottom: 1px solid rgba(0,0,0,.3);
+}
+.select-wrapper i {
   color: rgba(0,0,0,.3);
 }
 .select-dropdown li.disabled {
@@ -468,6 +489,46 @@ select:disabled {
 
   &:hover { background-color: transparent; }
 }
+
+
+/*********************
+      File Input
+**********************/
+.file-field {
+  position: relative;
+  overflow: hidden;
+
+  input.file-path {
+    margin-left: 100px;
+  }
+
+  .btn {
+    position: absolute;
+    top: 0;
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  span {
+    cursor: pointer;
+  }
+
+  input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+
 
 
 /***************
