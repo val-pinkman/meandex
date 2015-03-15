@@ -3,6 +3,7 @@ var Pokemon = require('./models/pokemon');
 var PokeList = require('./models/pokemonlist.js');
 var PokeType = require('./models/poketype.js');
 var PokeMove = require('./models/pokemove.js');
+var PokeAbility = require('./models/pokeability.js');
 
 module.exports = function(app) {
 
@@ -55,6 +56,7 @@ module.exports = function(app) {
         });
     });
 
+    // get all pokemon types
     app.get('/api/types', function(req, res) {
 
         PokeType.find().sort('id').exec(function(err, types) {
@@ -66,8 +68,23 @@ module.exports = function(app) {
     });
 
     // get a pokemon abilty by its id
-    app.get('/api/abilty/:id', function(req, res) {
+    app.get('/api/ability/:id', function(req, res) {
+        PokeAbility.findOne({ "id": req.params.id }, function(err, ability) {
+            if(err)
+                res.send(err);
 
+            res.json(ability);
+        });
+    });
+
+    // get all pokemons abilities
+    app.get('/api/abilities', function(req, res) {
+        PokeAbility.find().sort('id').exec(function(err, abilities) {
+            if(err)
+                res.send(err);
+
+            res.json(abilities);
+        });
     });
 
     // frontend routes =========================================================
