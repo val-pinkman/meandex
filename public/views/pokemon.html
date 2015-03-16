@@ -8,7 +8,7 @@
         <div class="col s8">
             <h2 class="row header pkStat__name">{{poke.name}}</h2>
             <div class="row pkStat__height">HEIGHT : {{poke.height/10}}m</div>
-            <div class="row pkStat__weight">WEIGHT : {{poke.weight/10}}Kg</div>
+            <!-- <div class="row pkStat__weight">WEIGHT : {{poke.weight/10}}Kg</div> -->
             <div class="row pkStat__type">
                 <div ng-repeat="type in poke.types.slice().reverse()">
                     <div ng-if="!($index % 2)">TYPE : </div>
