@@ -38,7 +38,7 @@ require('./app/routes')(app);
 
 // start app ===========================
 // startup our app at http://localhost:8080
-app.listen(port);
+// app.listen(port);
 
 console.log('Pokemon happens at port : ' + port);
 

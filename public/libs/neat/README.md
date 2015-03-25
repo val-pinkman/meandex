@@ -13,6 +13,9 @@ Neat is a fluid grid framework built with [Bourbon](https://github.com/thoughtbo
 - **[Changelog](https://github.com/thoughtbot/neat/releases)**
 - **[Issues & Bugs](https://github.com/thoughtbot/neat/issues)**
 
+Follow the [@bourbonsass](https://twitter.com/bourbonsass) Twitter account
+for updates.
+
 ## Requirements
 
 - [Sass](https://github.com/sass/sass) 3.3+
@@ -78,16 +81,7 @@ For command line help, visit our wiki page on Neat’s [command line interface](
   bundle update sass
   ```
 
-3. Install the Neat library into the current directory:
-
-  ```bash
-  bourbon install # if not already installed
-  ```
-  ```bash
-  neat install
-  ```
-
-4.  Import Neat in your `application.css.scss`, after Bourbon:
+3.  Import Neat in your `application.scss`, after Bourbon:
 
   ```scss
   @import "bourbon";
@@ -245,12 +239,12 @@ Unless you [open a pull request](https://github.com/thoughtbot/neat/compare/), t
 
 ## Browser support
 
-- Chrome 4.0+
-- Firefox 3.5+
+- Chrome 10+
+- Firefox 29+
 - Internet Explorer 9+ (visual grid is IE 10 only)
 - Internet Explorer 8 with [selectivizr](http://selectivizr.com) (no `media()` support)
 - Opera 9.5+
-- Safari 4.0+
+- Safari 5.1+
 
 ## The Bourbon family
 
@@ -259,12 +253,20 @@ Unless you [open a pull request](https://github.com/thoughtbot/neat/compare/), t
 - [Bitters](https://github.com/thoughtbot/bitters): Scaffold styles, variables and structure for Bourbon projects
 - [Refills](https://github.com/thoughtbot/refills): Prepackaged patterns and components built with Bourbon, Neat and Bitters
 
-## Credits
-
-[![thoughtbot](http://images.thoughtbot.com/bourbon/thoughtbot-logo.svg)](http://thoughtbot.com)
-
-Neat is maintained and funded by [thoughtbot, inc](http://thoughtbot.com). Tweet your questions or suggestions to [@bourbonsass](https://twitter.com/bourbonsass) and while you’re at it follow us too.
-
 ## License
 
 Copyright © 2012–2015 [thoughtbot, inc](http://thoughtbot.com). Neat is free software, and may be redistributed under the terms specified in the [license](LICENSE.md).
+
+## About thoughtbot
+
+![thoughtbot](https://thoughtbot.com/logo.png)
+
+Neat is maintained and funded by thoughtbot, inc.
+The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+
+We love open source software!
+See [our other projects][community] or
+[hire us][hire] to design, develop, and grow your product.
+
+[community]: https://thoughtbot.com/community?utm_source=github
+[hire]: https://thoughtbot.com/hire-us?utm_source=github

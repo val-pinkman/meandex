@@ -29,7 +29,7 @@ module.exports = function(app) {
             if(err)
                 res.send(err);
 
-            console.log(pokemon);
+            // console.log(pokemon);
             res.json(pokemon);
         });
     });
